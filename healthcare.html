@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealIndia - Premium Medical Tourism Concierge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a4480 100%);
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 90, 160, 0.9), rgba(26, 68, 128, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8ff" width="1200" height="600"/><circle fill="%23e6f3ff" cx="200" cy="150" r="80"/><circle fill="%23ddeeff" cx="800" cy="300" r="120"/><circle fill="%23e6f3ff" cx="1000" cy="100" r="60"/></svg>');
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #e55a2e;
+        }
+        
+        /* Value Proposition */
+        .value-prop {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #2c5aa0;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .value-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c5aa0;
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c5aa0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border: 2px solid #e6f3ff;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #2c5aa0;
+        }
+        
+        .service-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c5aa0;
+        }
+        
+        /* Contact Form */
+        .contact {
+            background: #2c5aa0;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a4480;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #b8d4f0;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">HealIndia</div>
+                <div class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>World-Class Healthcare in India</h1>
+            <p>Your premium concierge service for medical tourism. We handle everything from consultation to recovery, so you can focus on healing.</p>
+            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView()">Start Your Journey</button>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">💰</div>
+                    <h3>Save 60-90%</h3>
+                    <p>Get world-class medical treatment at a fraction of the cost compared to US and European prices.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🏥</div>
+                    <h3>Top-Tier Hospitals</h3>
+                    <p>Access to JCI-accredited hospitals with internationally trained doctors and cutting-edge technology.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3>Full Concierge Service</h3>
+                    <p>From visa assistance to post-care follow-up, we manage every detail of your medical journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Specialties</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Cardiac Surgery</h4>
+                    <p>Bypass, valve replacement, angioplasty with world-renowned cardiac surgeons.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Orthopedics</h4>
+                    <p>Joint replacement, spine surgery, sports medicine procedures.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Oncology</h4>
+                    <p>Cancer treatment with latest technology and personalized care plans.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Cosmetic Surgery</h4>
+                    <p>Aesthetic procedures with board-certified plastic surgeons.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Fertility Treatments</h4>
+                    <p>IVF, surrogacy, and reproductive health services.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Dental Care</h4>
+                    <p>Implants, cosmetic dentistry, and complex dental procedures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div>
+                    <h2>Ready to Begin Your Healing Journey?</h2>
+                    <p style="font-size: 18px; margin-bottom: 30px;">Get a personalized consultation and treatment plan tailored to your needs. Our medical tourism experts will guide you through every step.</p>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4>🌟 What's Included:</h4>
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Medical consultation & treatment planning</li>
+                            <li>Visa assistance & travel arrangements</li>
+                            <li>Airport transfers & accommodation</li>
+                            <li>24/7 support during your stay</li>
+                            <li>Post-treatment follow-up care</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>📞 Emergency Contact:</strong> +91-XXX-XXX-XXXX<br>
+                    <strong>✉️ Email:</strong> care@healindia.com</p>
+                </div>
+                
+                <form class="contact-form">
+                    <h3 style="color: #2c5aa0; margin-bottom: 20px; text-align: center;">Get Your Free Consultation</h3>
+                    
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <select required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="UAE">UAE</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Medical Procedure of Interest</label>
+                        <select>
+                            <option value="">Select Procedure</option>
+                            <option value="cardiac">Cardiac Surgery</option>
+                            <option value="orthopedic">Orthopedic Surgery</option>
+                            <option value="oncology">Cancer Treatment</option>
+                            <option value="cosmetic">Cosmetic Surgery</option>
+                            <option value="fertility">Fertility Treatment</option>
+                            <option value="dental">Dental Care</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tell us about your medical needs</label>
+                        <textarea placeholder="Please describe your condition, preferred timeline, and any specific requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Get Free Consultation</button>
+                    
+                    <p style="font-size: 12px; color: #666; margin-top: 15px; text-align: center;">
+                        By submitting this form, you agree to our privacy policy. We'll contact you within 24 hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HealIndia</h4>
+                    <p>Your trusted partner for premium medical tourism in India. Combining world-class healthcare with personalized concierge services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="#services">Our Services</a></p>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 +91-XXX-XXX-XXXX</p>
+                    <p>✉️ care@healindia.com</p>
+                    <p>🌐 www.healindia.com</p>
+                </div>
+            </div>
+            <p style="border-top: 1px solid #2c5aa0; padding-top: 20px; margin-top: 20px;">
+                © 2025 HealIndia. All rights reserved. | Licensed Medical Tourism Facilitator
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours to discuss your medical tourism needs.');
+        });
+        
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
